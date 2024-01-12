@@ -22,7 +22,7 @@ def proxy_post():  # put application's code here
 
     del headers["X-Api-Key"]
 
-    print(f"Post request for url {data["url"]} with headers:")
+    print(f"Post request for url {data['url']} with headers:")
     for header in headers:
         print(header)
 
