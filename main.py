@@ -33,4 +33,9 @@ def proxy_post():  # put application's code here
 
 
 if __name__ == '__main__':
-    app.run()
+    ENV = os.getenv('FLASK_ENV', default='development')
+    if ENV == 'development':
+        host = '127.0.0.1'  # localhost for development
+    else:
+        host = '0.0.0.0'  # public IP for production
+    app.run(host=host)
