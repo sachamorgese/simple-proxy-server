@@ -12,7 +12,7 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 @app.route('/', methods=['POST'])
 def proxy_post():  # put application's code here
     data = request.get_json() # returns a Python dictionary
-    headers = request.headers
+    headers = dict(request.headers)
 
     api_key_req = headers.get("X-Api-Key", None)
     api_key = os.getenv("API_KEY")
